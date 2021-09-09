@@ -1,8 +1,6 @@
-import useAmount from '../hooks/use-amount';
+import counter from '../hocs/counter';
 
-function Product({ product }) {
-  const { amount, decrement, increment } = useAmount(0);
-
+function Product({ product, amount, decrement, increment }) {
   return (
     <div>
       <p>{product.name}</p>
@@ -14,4 +12,4 @@ function Product({ product }) {
   );
 }
 
-export default Product;
+export default counter(Product);
