@@ -17,7 +17,7 @@ function Restaurants({ restaurants }) {
 
   return (
     <div>
-      <Tabs tabs={tabs} onChange={setActiveId} />
+      <Tabs tabs={tabs} onChange={setActiveId} activeId={activeId} />
       <Menu menu={activeRestaurant.menu} />
     </div>
   );
