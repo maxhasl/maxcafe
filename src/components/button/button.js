@@ -18,7 +18,7 @@ const Button = ({ icon, ...props }) => {
   );
 };
 
-Button.proptypes = {
+Button.propTypes = {
   icon: PropTypes.string,
 };
 
