@@ -1,3 +1,4 @@
+import { Provider } from 'react-redux';
 import './index.css';
 
 import ReactDOM from 'react-dom';
@@ -9,6 +10,8 @@ import store from './redux/store';
 window.store = store;
 
 ReactDOM.render(
-  <App restaurants={restaurants} />,
+  <Provider store={store}>
+    <App restaurants={restaurants} />
+  </Provider>,
   document.getElementById('root')
 );
