@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import Restaurants from '../restaurants';
 import Header from '../header';
 
@@ -8,14 +7,10 @@ class App extends PureComponent {
     return (
       <div>
         <Header />
-        <Restaurants restaurants={this.props.restaurants} />
+        <Restaurants />
       </div>
     );
   }
 }
-
-App.propTypes = {
-  restaurants: PropTypes.array,
-};
 
 export default App;
