@@ -1,4 +1,10 @@
-import { INCREMENT, DECREMENT, REMOVE } from '../constants';
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+const REMOVE = 'REMOVE';
+
+export const increment = (id) => ({ type: INCREMENT, payload: id });
+export const decrement = (id) => ({ type: DECREMENT, payload: id });
+export const remove = (id) => ({ type: REMOVE, payload: id });
 
 export default (state = {}, action) => {
   const { type, payload: id } = action;
