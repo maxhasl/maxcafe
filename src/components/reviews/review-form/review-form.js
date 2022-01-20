@@ -35,6 +35,12 @@ const ReviewForm = ({ onSubmit }) => {
             {...handlers.text}
           />
         </div>
+        <div className={styles.rateWrap}>
+          <span>Rating: </span>
+          <span>
+            <Rate {...handlers.rating} />
+          </span>
+        </div>
         <div className={styles.publish}>
           <Button primary block>
             PUBLISH REVIEW
