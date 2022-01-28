@@ -15,10 +15,10 @@ export const loadUsers = createAsyncThunk('users/load', api.loadUsers, {
 
 const Users = createEntityAdapter();
 
-const initialState = {
+const initialState = Users.getInitialState({
   status: idle,
   error: null,
-};
+});
 
 const { reducer } = createSlice({
   name: 'restaurants',
