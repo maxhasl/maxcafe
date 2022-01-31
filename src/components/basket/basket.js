@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { connect } from 'react-redux';
 import styles from './basket.module.css';
 import itemStyles from './basket-item/basket-item.module.css';
@@ -5,10 +6,10 @@ import BasketItem from './basket-item';
 import Button from '../button/button';
 import { orderProductsSelector, totalSelector } from '../../redux/selectors';
 import { UserConsumer } from '../../contexts/user';
+import moneyContext from '../../contexts/money';
 
 function Basket({ title = 'Basket', total, orderProducts }) {
-  console.log('render Basket');
-  // const { name } = useContext(userContext);
+  const { m } = useContext(moneyContext);
 
   if (!total) {
     return (
@@ -20,9 +21,8 @@ function Basket({ title = 'Basket', total, orderProducts }) {
 
   return (
     <div className={styles.basket}>
-      {/* <h4 className={styles.title}>{`${name}'n ${title}`}</h4> */}
       <h4 className={styles.title}>
-        <UserConsumer>{({ name }) => `${name}'n ${title}`}</UserConsumer>
+        <UserConsumer>{({ name }) => `${name}'s ${title}`}</UserConsumer>
       </h4>
       {orderProducts.map(({ product, amount, subtotal }) => (
         <BasketItem
@@ -38,7 +38,7 @@ function Basket({ title = 'Basket', total, orderProducts }) {
           <p>Total</p>
         </div>
         <div className={itemStyles.info}>
-          <p>{`${total} $`}</p>
+          <p>{m(total)}</p>
         </div>
       </div>
       <Button primary block>
