@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import styles from './basket.module.css';
 import itemStyles from './basket-item/basket-item.module.css';
 import BasketItem from './basket-item';
@@ -41,9 +42,11 @@ function Basket({ title = 'Basket', total, orderProducts }) {
           <p>{m(total)}</p>
         </div>
       </div>
-      <Button primary block>
-        checkout
-      </Button>
+      <Link to="/checkout">
+        <Button primary block>
+          checkout
+        </Button>
+      </Link>
     </div>
   );
 }
