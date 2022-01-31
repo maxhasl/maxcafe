@@ -6,7 +6,7 @@ import Basket from '../basket';
 import { UserProvider } from '../../contexts/user';
 
 const App = () => {
-  const [name, setName] = useState('Andrey');
+  const [name, setName] = useState('Max');
   return (
     <div>
       <UserProvider value={{ name, setName }}>
