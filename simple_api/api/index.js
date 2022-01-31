@@ -10,10 +10,10 @@ router.get('/products', (req, res, next) => {
   const { id } = req.query;
   let result = products;
   if (id) {
-    const restaurant = getById(restaurants)(id);
-    if (restaurant) {
-      result = restaurant.menu.map(getById(result));
-    }
+    // const restaurant = getById(restaurants)(id);
+    // if (restaurant) {
+    //   result = restaurant.menu.map(getById(result));
+    // }
   }
   reply(res, result);
 });
